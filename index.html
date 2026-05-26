@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flex vs Grid Thinking</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Advanced Layout Systems</h1>
+
+    <p>
+      Understanding Flexbox vs Grid thinking:
+      flow vs structure, alignment vs layout,
+      and one-dimensional vs two-dimensional design.
+    </p>
+  </header>
+
+  <!-- FLEXBOX EXAMPLE -->
+  <section class="card">
+    <h2>Flexbox = Flow & Alignment</h2>
+
+    <p>
+      Flexbox works best for arranging content
+      in one direction at a time.
+    </p>
+
+    <nav class="flex-nav">
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+    </nav>
+  </section>
+
+  <!-- GRID EXAMPLE -->
+  <section class="card">
+    <h2>Grid = Structure & Layout</h2>
+
+    <p>
+      Grid works best for structured layouts
+      using rows and columns simultaneously.
+    </p>
+
+    <div class="grid-layout">
+      <div class="grid-item">Card 1</div>
+      <div class="grid-item">Card 2</div>
+      <div class="grid-item">Card 3</div>
+      <div class="grid-item">Card 4</div>
+      <div class="grid-item">Card 5</div>
+      <div class="grid-item">Card 6</div>
+    </div>
+  </section>
+
+  <!-- COMBINED LAYOUT -->
+  <section class="card">
+    <h2>Combining Grid + Flex</h2>
+
+    <p>
+      Grid organizes the page structure,
+      while Flexbox aligns content inside components.
+    </p>
+
+    <div class="dashboard">
+
+      <article class="panel">
+        <div class="panel-header">
+          <h3>Projects</h3>
+          <button>View</button>
+        </div>
+
+        <p>
+          Flexbox aligns the heading and button.
+        </p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <h3>Analytics</h3>
+          <button>Open</button>
+        </div>
+
+        <p>
+          Grid controls the overall layout structure.
+        </p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <h3>Archive</h3>
+          <button>Browse</button>
+        </div>
+
+        <p>
+          Most modern interfaces combine both systems.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- VISUAL THINKING -->
+  <section class="card">
+    <h2>Layout Thinking</h2>
+
+    <div class="comparison">
+
+      <div class="thinking-box">
+        <h3>Flex Thinking</h3>
+
+        <ul>
+          <li>One direction</li>
+          <li>Content flow</li>
+          <li>Dynamic spacing</li>
+          <li>Component alignment</li>
+        </ul>
+      </div>
+
+      <div class="thinking-box">
+        <h3>Grid Thinking</h3>
+
+        <ul>
+          <li>Rows + columns</li>
+          <li>Structural control</li>
+          <li>Spatial organization</li>
+          <li>Page layout systems</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
