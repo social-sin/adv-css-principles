@@ -1,17 +1,81 @@
 /* =========================
+   DESIGN SYSTEM VARIABLES
+========================= */
+
+:root {
+
+  /* COLORS */
+
+  --bg-color: #fef6e4;
+  --text-color: #172c66;
+  --accent-color: green;
+
+  --card-bg: white;
+  --border-color: #d9d9d9;
+
+  /* TYPOGRAPHY SCALE */
+
+  --h1-size: 3rem;
+  --h2-size: 2rem;
+  --h3-size: 1.4rem;
+  --body-size: 1rem;
+
+  /* SPACING SCALE */
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+
+  /* RADIUS */
+
+  --radius: 12px;
+}
+
+/* =========================
    GLOBAL STYLES
 ========================= */
 
 body {
   font-family: Arial, sans-serif;
 
-  background-color: #fef6e4;
-  color: #172c66;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   margin: 0;
-  padding: 40px;
+  padding: var(--space-lg);
 
   line-height: 1.6;
+}
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+
+h1,
+h2,
+h3 {
+  color: var(--accent-color);
+
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+p {
+  font-size: var(--body-size);
 }
 
 /* =========================
@@ -20,164 +84,133 @@ body {
 
 .hero {
   text-align: center;
-  margin-bottom: 3rem;
-}
 
-h1,
-h2 {
-  color: green;
-}
-
-h1 {
-  font-size: 3rem;
+  margin-bottom: var(--space-lg);
 }
 
 /* =========================
-   CARD
+   SECTIONS
 ========================= */
 
-.card {
-  background-color: white;
-
-  border: 3px solid #172c66;
-  border-radius: 12px;
-
-  padding: 30px;
-  margin-bottom: 30px;
+.section {
+  margin-bottom: var(--space-lg);
 }
 
 /* =========================
-   FLEXBOX NAVIGATION
+   CARD SYSTEM
 ========================= */
 
-.flex-nav {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 1rem;
-
-  margin-top: 2rem;
-
-  flex-wrap: wrap;
-}
-
-.flex-nav a {
-  text-decoration: none;
-
-  background-color: #eeeeee;
-
-  color: #172c66;
-
-  padding: 0.75rem 1.5rem;
-
-  border-radius: 8px;
-
-  transition: background-color 0.3s ease;
-}
-
-.flex-nav a:hover {
-  background-color: #d9d9d9;
-}
-
-/* =========================
-   GRID LAYOUT
-========================= */
-
-.grid-layout {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(180px, 1fr));
-
-  gap: 1rem;
-
-  margin-top: 2rem;
-}
-
-.grid-item {
-  background-color: #f4f4f4;
-
-  border: 2px solid #cccccc;
-  border-radius: 10px;
-
-  padding: 2rem;
-
-  text-align: center;
-}
-
-/* =========================
-   GRID + FLEX COMBINED
-========================= */
-
-.dashboard {
+.card-grid,
+.pattern-grid {
   display: grid;
 
   grid-template-columns:
     repeat(auto-fit, minmax(250px, 1fr));
 
-  gap: 1.5rem;
-
-  margin-top: 2rem;
+  gap: var(--space-md);
 }
 
-.panel {
-  border: 2px solid #cccccc;
+.card,
+.pattern-card {
+  background-color: var(--card-bg);
 
-  border-radius: 10px;
+  border: 2px solid var(--border-color);
 
-  padding: 1.5rem;
+  border-radius: var(--radius);
 
-  background-color: #fafafa;
-}
-
-/* FLEX INSIDE GRID */
-
-.panel-header {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-
-  gap: 1rem;
-}
-
-button {
-  border: none;
-
-  background-color: green;
-  color: white;
-
-  padding: 0.5rem 1rem;
-
-  border-radius: 6px;
-
-  cursor: pointer;
+  padding: var(--space-md);
 }
 
 /* =========================
-   COMPARISON SECTION
+   LAYOUT LOGIC
 ========================= */
 
-.comparison {
+.layout-demo {
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 250px 1fr;
 
-  gap: 2rem;
-
-  margin-top: 2rem;
+  gap: var(--space-md);
 }
 
-.thinking-box {
-  background-color: #f4f4f4;
+.sidebar,
+.content {
+  background-color: white;
 
-  border-radius: 10px;
+  border: 2px solid var(--border-color);
 
-  padding: 1.5rem;
+  border-radius: var(--radius);
+
+  padding: var(--space-md);
 }
 
-.thinking-box ul {
-  padding-left: 1.5rem;
+/* =========================
+   VISUAL RHYTHM
+========================= */
+
+.rhythm-stack {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: var(--space-sm);
+
+  margin-bottom: var(--space-md);
+}
+
+.rhythm-box {
+  background-color: green;
+
+  width: 80px;
+
+  border-radius: 6px;
+}
+
+.large {
+  height: 180px;
+}
+
+.medium {
+  height: 120px;
+}
+
+.small {
+  height: 70px;
+}
+
+.rhythm-text {
+  max-width: 700px;
+}
+
+/* =========================
+   PROPORTION & SCALE
+========================= */
+
+.scale-demo {
+  background-color: white;
+
+  border: 2px solid var(--border-color);
+
+  border-radius: var(--radius);
+
+  padding: var(--space-md);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+  .layout-demo {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: var(--space-md);
+  }
+
+  .rhythm-stack {
+    flex-wrap: wrap;
+  }
 }
